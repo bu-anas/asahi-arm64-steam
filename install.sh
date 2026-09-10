@@ -6,3 +6,23 @@
 
 set -euo pipefail
 
+
+
+wget https://client-update.steamstatic.com/bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846
+mv bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846 bins_linuxarm64_linuxarm64.zip 
+
+mkdir -p ~/.local/share/Steam/
+unzip bins_linuxarm64_linuxarm64.zip -d ~/.local/share/Steam/
+
+mkdir -p ~/.local/share/Steam/package && echo publicbeta > ~/.local/share/Steam/package/beta
+
+chmod -R u+rwx ~/.local/share/Steam/steamrtarm64/
+
+sudo ln -s /usr/lib64/libvpx.so.9 /usr/lib64/libvpx.so.6
+
+mkdir -p ~/.steam
+ln -s ~/.local/share/Steam ~/.steam/steam
+ln -s ~/.local/share/Steam ~/.steam/root
+ln -s ~/.local/share/Steam/linuxarm64 ~/.steam/sdkarm64
+
+sudo dnf install gtk2 fex-emu
