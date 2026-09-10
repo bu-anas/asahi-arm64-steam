@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Steam (ARM64)
+Comment=Play games on Steam
+Exec=muvm ~/.local/share/Steam/steamrtarm64/steam -no-cef-sandbox
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;
+MimeType=x-scheme-handler/steam;x-scheme-handler/steamlink;
+PrefersNonDefaultGPU=false
+X-KDE-RunOnDiscreteGpu=false

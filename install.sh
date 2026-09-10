@@ -21,6 +21,7 @@ if [ ! -f "bins_linuxarm64_linuxarm64.zip" ]; then
 echo "installing steam build"
 wget https://client-update.steamstatic.com/bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846
 mv bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846 bins_linuxarm64_linuxarm64.zip 
+
 else
   echo "Steam build is already installed"
   echo -n "extracting in: "
@@ -46,3 +47,9 @@ ln -sf ~/.local/share/Steam ~/.steam/root
 ln -sf ~/.local/share/Steam/linuxarm64 ~/.steam/sdkarm64
 
 sudo dnf install gtk2 fex-emu
+if [ ! -d ~/.local/share/applications ]; then
+mkdir ~/.local/share/applications/
+else
+echo "applications directory is already installed"
+fi
+cp Steam.desktop ~/.local/share/applications/
