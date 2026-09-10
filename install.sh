@@ -6,7 +6,14 @@
 
 set -euo pipefail
 
-
+while true ; do
+read -p "Hi, this script utilizes u/RrOoSsSsOo's reddit post to get the steam arm64 beta installed. are you sure you want to continue? (y/n): " choice
+case "${choice,,}" in
+    y|yes ) 
+        break ;;
+    n|no ) 
+        exit 0 ;;
+done
 
 wget https://client-update.steamstatic.com/bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846
 mv bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846 bins_linuxarm64_linuxarm64.zip 
