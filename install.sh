@@ -4,17 +4,7 @@
 # 1. u/RrOoSsSsOo and their post on getting the arm build of steam. https://www.reddit.com/r/AsahiLinux/comments/1tk6zoe/steam_native_arm_aarch64_on_asahi_linux_fedora/
 # 2. I will use an older static link using a specific old steam version of the arm64 in which it will automatically update, if you want to grab the latest build look into both de-wim's and ubuntu asahi steam install scripts
 # Check if the target installation folder does NOT exist
-if [ ! -d "$HOME/.local/share/Steam/steamrtarm64" ]; then
-    echo "Downloading Steam arm64 client binaries..."
-    wget -q --show-progress https://steamstatic.com
-    mv bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846 bins_linuxarm64_linuxarm64.zip 
 
-    mkdir -p "$HOME/.local/share/Steam/"
-    unzip -q bins_linuxarm64_linuxarm64.zip -d "$HOME/.local/share/Steam/"
-    rm bins_linuxarm64_linuxarm64.zip
-else
-    echo "Steam arm64 binaries are already installed. Skipping download."
-fi
 set -eo pipefail
 
 while true ; do
