@@ -13,6 +13,7 @@ case "${choice,,}" in
         break ;;
     n|no ) 
         exit 0 ;;
+    esac
 done
 
 wget https://client-update.steamstatic.com/bins_linuxarm64_linuxarm64.zip.0f11199e9a58a0ec4aab3833152ada1b2e56c846
